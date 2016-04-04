@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $.getJSON("http://cooper-union-search-proxy.herokuapp.com/twitter/search/traffic?count=10", function(response){
+
+        console.log(response.statuses[0].user.profile_image_url);
+
+        $("#tweets").append("<img src=" + response.statuses[0].user.profile_image_url + ">");
+        $("#followers").append("<p>" + response.statuses[0].user.followers_count + "</p>");
+        $("#friends").append("<p>" + response.statuses[0].user.friends_count + "</p>");
+      });
+    </script>
+  </head>
+
+<style>
+
+p { font: IMPACT;
+font-size: 30px;
+color: white;
+display: block;
+width: 40%;
+margin: auto;
+text-align: center;
+background-color: blue;
+background-image: imageTag;
+
+
+}
+#tweets {
+  font: IMPACT;
+  font-size: 30px;
+  color: white;
+  display: block;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  background-color: blue;
+  background-image: imageTag;
+}
+#followers {
+  font: IMPACT;
+  font-size: 30px;
+  color: white;
+  display: block;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  background-color: blue;
+  background-image: imageTag;
+}
+#friends {
+  font: IMPACT;
+  font-size: 30px;
+  color: white;
+  display: block;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  background-color: blue;
+  background-image: imageTag;
+}
+
+.cake img {
+  width: 300px;
+
+}
+
+</style>
+
+<body>
+  <div id="intro">
+    <p>HERE'S THE CAKE.</p>
+    <div class ="cake">
+      <p><img src="http://d2gk7xgygi98cy.cloudfront.net/14-3-large.jpg"></p>
+
+  </div>
+
+    <div id="tweets">
+    <p>Profile pic</p>
+    </div>
+    <div id="followers">
+    <p>Followers</p>
+    </div>
+
+    <div id="friends">
+      <p>Friends</p>
+    </div>
+  </body>
+</html>
